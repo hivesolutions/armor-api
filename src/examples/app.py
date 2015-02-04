@@ -1,23 +1,23 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Hive Armor
-# Copyright (c) 2008-2015 Hive Solutions Lda.
+# Hive Nexmo API
+# Copyright (C) 2008-2015 Hive Solutions Lda.
 #
-# This file is part of Hive Armor.
+# This file is part of Hive Nexmo API.
 #
-# Hive Armor is free software: you can redistribute it and/or modify
+# Hive Nexmo API is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# Hive Armor is distributed in the hope that it will be useful,
+# Hive Nexmo API is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with Hive Armor. If not, see <http://www.gnu.org/licenses/>.
+# along with Hive Nexmo API. If not, see <http://www.gnu.org/licenses/>.
 
 __author__ = "João Magalhães <joamag@hive.pt>"
 """ The author(s) of the module """
@@ -37,8 +37,28 @@ __copyright__ = "Copyright (c) 2008-2015 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
+import appier
+
 from . import base
 
+class ArmorApp(appier.WebApp):
+
+    def __init__(self):
+        appier.WebApp.__init__(self, name = "nexmo")
+
+    @appier.route("/", "GET")
+    def index(self):
+        return self.balance()
+
+    @appier.route("/nodes", "GET")
+    def nodes(self):
+        api = self.get_api()
+        nodes = api.list_nodes()
+        return nodes
+
+    def get_api(self):
+        return base.get_api()
+
 if __name__ == "__main__":
-    api = base.get_api()
-    api.list_nodes()
+    app = ArmorApp()
+    app.serve()
