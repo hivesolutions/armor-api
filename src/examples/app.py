@@ -48,7 +48,7 @@ class ArmorApp(appier.WebApp):
 
     @appier.route("/", "GET")
     def index(self):
-        return self.balance()
+        return self.nodes()
 
     @appier.route("/nodes", "GET")
     def nodes(self):
