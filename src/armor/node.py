@@ -40,6 +40,6 @@ __license__ = "GNU General Public License (GPL), Version 3"
 class NodeApi(object):
 
     def list_nodes(self, *args, **kwargs):
-        url = self.base_url + "admin/models/node.json"
+        url = self.base_url + "admin/models/node"
         contents = self.get(url, **kwargs)
         return contents

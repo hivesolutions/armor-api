@@ -90,9 +90,8 @@ class Api(
         )
         self.username = contents.get("username", None)
         self.object_id = contents.get("object_id", None)
-        self.acl = contents.get("acl", None)
+        self.tokens = contents.get("tokens", None)
         self.session_id = contents.get("session_id", None)
-        self.tokens = self.acl.keys()
         self.trigger("auth", contents)
         return self.session_id
 

@@ -34,7 +34,8 @@ __copyright__ = "Copyright (c) 2008-2015 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
+from . import app
 from . import base
-from . import node
 
+from .app import ArmorApp
 from .base import get_api
