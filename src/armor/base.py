@@ -39,11 +39,16 @@ __license__ = "GNU General Public License (GPL), Version 3"
 
 import appier
 
+from . import node
+
 BASE_URL = "http://armor/api/"
 """ The default base url to be used when no other
 base url value is provided to the constructor """
 
-class Api(appier.Api):
+class Api(
+    appier.Api,
+    node.NodeApi
+):
 
     def __init__(self, *args, **kwargs):
         appier.Api.__init__(self, *args, **kwargs)
