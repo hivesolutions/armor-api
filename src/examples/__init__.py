@@ -35,7 +35,6 @@ __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
 from . import base
-from . import customer
-from . import error
+from . import node
 
 from .base import get_api
