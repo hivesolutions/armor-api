@@ -91,5 +91,6 @@ class Api(appier.Api):
         self.trigger("auth", contents)
         return self.session_id
 
-    def ping(self):  #@todo create some ping request to be used
-        return self.self_user()
+    def ping(self):
+        url = self.base_url + "admin/ping"
+        return self.get(url, auth = False)
