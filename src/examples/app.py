@@ -56,6 +56,12 @@ class ArmorApp(appier.WebApp):
         nodes = api.list_nodes()
         return nodes
 
+    @appier.route("/ping", "GET")
+    def ping(self):
+        api = self.get_api()
+        ping = api.ping()
+        return ping
+
     def get_api(self):
         return base.get_api()
 
