@@ -37,14 +37,14 @@ __copyright__ = "Copyright (c) 2008-2015 Hive Solutions Lda."
 __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
-class NodeApi(object):
+class DomainApi(object):
 
-    def list_nodes(self, *args, **kwargs):
-        url = self.base_url + "admin/models/node"
+    def list_domains(self, *args, **kwargs):
+        url = self.base_url + "admin/models/domain"
         contents = self.get(url, **kwargs)
         return contents
 
-    def get_node(self, name):
-        url = self.base_url + "admin/models/node/" + name
+    def get_domain(self, name):
+        url = self.base_url + "admin/models/domain/" + name
         contents = self.get(url)
         return contents

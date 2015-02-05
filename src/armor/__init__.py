@@ -35,7 +35,9 @@ __license__ = "GNU General Public License (GPL), Version 3"
 """ The license for the module """
 
 from . import base
+from . import domain
 from . import node
 
 from .base import BASE_URL, Api
+from .domain import DomainApi
 from .node import NodeApi
