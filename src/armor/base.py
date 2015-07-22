@@ -75,7 +75,7 @@ class Api(
         if self.session_id: return self.session_id
         return self.login()
 
-    def auth_callback(self, params):
+    def auth_callback(self, params, headers):
         self.session_id = None
         session_id = self.get_session_id()
         params["session_id"] = session_id
