@@ -67,9 +67,8 @@ class Api(
         self.wrap_exception = kwargs.get("wrap_exception", True)
 
     def build(self, method, url, headers, kwargs):
-        auth = kwargs.get("auth", True)
+        auth = kwargs.pop("auth", True)
         if auth: kwargs["session_id"] = self.get_session_id()
-        if "auth" in kwargs: del kwargs["auth"]
 
     def get_session_id(self):
         if self.session_id: return self.session_id
