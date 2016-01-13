@@ -96,6 +96,7 @@ class Api(
         url = self.base_url + "admin/login"
         contents = self.get(
             url,
+            callback = False,
             auth = False,
             username = username,
             password = password
