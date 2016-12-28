@@ -72,3 +72,5 @@ class ArmorApp(appier.WebApp):
 if __name__ == "__main__":
     app = ArmorApp()
     app.serve()
+else:
+    __path__ = []
