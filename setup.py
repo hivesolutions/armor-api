@@ -48,7 +48,7 @@ setuptools.setup(
     description = "Armor API Client",
     license = "Apache License, Version 2.0",
     keywords = "armor api",
-    url = "http://armor_api.hive.pt",
+    url = "http://armor-api.hive.pt",
     zip_safe = False,
     packages = [
         "armor"
