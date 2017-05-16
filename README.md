@@ -1,3 +1,3 @@
-# [Armor API](http://armor_api.hive.pt)
+# [Armor API](http://armor-api.hive.pt)
 
 Armor API client written in Python.
