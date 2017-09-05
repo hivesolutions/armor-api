@@ -42,7 +42,7 @@ import appier
 import armor
 
 def get_api():
-    return armor.Api(
+    return armor.API(
         username = appier.conf("ARMOR_USERNAME"),
         password = appier.conf("ARMOR_PASSWORD")
     )

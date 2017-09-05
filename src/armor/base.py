@@ -46,14 +46,14 @@ BASE_URL = "http://armor/api/"
 """ The default base url to be used when no other
 base url value is provided to the constructor """
 
-class Api(
-    appier.Api,
-    node.NodeApi,
-    domain.DomainApi
+class API(
+    appier.API,
+    node.NodeAPI,
+    domain.DomainAPI
 ):
 
     def __init__(self, *args, **kwargs):
-        appier.Api.__init__(self, *args, **kwargs)
+        appier.API.__init__(self, *args, **kwargs)
         self.base_url = appier.conf("ARMOR_BASE_URL", BASE_URL)
         self.username = appier.conf("ARMOR_USERNAME", None)
         self.password = appier.conf("ARMOR_PASSWORD", None)

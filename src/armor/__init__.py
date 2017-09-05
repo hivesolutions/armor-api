@@ -38,6 +38,6 @@ from . import base
 from . import domain
 from . import node
 
-from .base import BASE_URL, Api
-from .domain import DomainApi
-from .node import NodeApi
+from .base import BASE_URL, API
+from .domain import DomainAPI
+from .node import NodeAPI
