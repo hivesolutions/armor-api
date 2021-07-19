@@ -46,7 +46,7 @@ class ArmorApp(appier.WebApp):
     def __init__(self, *args, **kwargs):
         appier.WebApp.__init__(
             self,
-            name = "nexmo",
+            name = "armor",
             *args, **kwargs
         )
 
