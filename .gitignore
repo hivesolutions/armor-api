@@ -5,4 +5,4 @@ session.shelve*
 
 /dist
 /build
-/src/armor_api.egg-info
+/src/armor-api.egg-info
