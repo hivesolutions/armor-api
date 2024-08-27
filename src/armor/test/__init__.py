@@ -24,11 +24,3 @@ __copyright__ = "Copyright (c) 2008-2024 Hive Solutions Lda."
 
 __license__ = "Apache License, Version 2.0"
 """ The license for the module """
-
-from . import base
-from . import domain
-from . import node
-
-from .base import BASE_URL, API
-from .domain import DomainAPI
-from .node import NodeAPI

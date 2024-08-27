@@ -8,7 +8,7 @@ Armor API is currently licensed under the [Apache License, Version 2.0](http://w
 
 ## Build Automation
 
-[![Build Status](https://app.travis-ci.com/hivesolutions/armor-api.svg?branch=master)](https://travis-ci.com/github/hivesolutions/armor-api)
+[![Build Status](https://github.com/hivesolutions/armor-api/workflows/Main%20Workflow/badge.svg)](https://github.com/hivesolutions/armor-api/actions)
 [![Coverage Status](https://coveralls.io/repos/hivesolutions/armor-api/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/armor-api?branch=master)
 [![PyPi Status](https://img.shields.io/pypi/v/armor-api.svg)](https://pypi.python.org/pypi/armor-api)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/)

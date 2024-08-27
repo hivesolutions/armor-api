@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Hive Armor
-# Copyright (c) 2008-2020 Hive Solutions Lda.
+# Copyright (c) 2008-2024 Hive Solutions Lda.
 #
 # This file is part of Hive Armor.
 #
@@ -22,16 +22,7 @@
 __author__ = "João Magalhães <joamag@hive.pt>"
 """ The author(s) of the module """
 
-__version__ = "1.0.0"
-""" The version of the module """
-
-__revision__ = "$LastChangedRevision$"
-""" The revision number of the module """
-
-__date__ = "$LastChangedDate$"
-""" The last change date of the module """
-
-__copyright__ = "Copyright (c) 2008-2020 Hive Solutions Lda."
+__copyright__ = "Copyright (c) 2008-2024 Hive Solutions Lda."
 """ The copyright for the module """
 
 __license__ = "Apache License, Version 2.0"
@@ -46,11 +37,8 @@ BASE_URL = "http://armor/api/"
 """ The default base URL to be used when no other
 base URL value is provided to the constructor """
 
-class API(
-    appier.API,
-    node.NodeAPI,
-    domain.DomainAPI
-):
+
+class API(appier.API, node.NodeAPI, domain.DomainAPI):
 
     def __init__(self, *args, **kwargs):
         appier.API.__init__(self, *args, **kwargs)
@@ -70,19 +58,21 @@ class API(
         self,
         method,
         url,
-        data = None,
-        data_j = None,
-        data_m = None,
-        headers = None,
-        params = None,
-        mime = None,
-        kwargs = None
+        data=None,
+        data_j=None,
+        data_m=None,
+        headers=None,
+        params=None,
+        mime=None,
+        kwargs=None,
     ):
         auth = kwargs.pop("auth", True)
-        if auth: kwargs["session_id"] = self.get_session_id()
+        if auth:
+            kwargs["session_id"] = self.get_session_id()
 
     def get_session_id(self):
-        if self.session_id: return self.session_id
+        if self.session_id:
+            return self.session_id
         return self.login()
 
     def auth_callback(self, params, headers):
@@ -90,16 +80,12 @@ class API(
         session_id = self.get_session_id()
         params["session_id"] = session_id
 
-    def login(self, username = None, password = None):
+    def login(self, username=None, password=None):
         username = username or self.username
         password = password or self.password
         url = self.base_url + "admin/login"
         contents = self.get(
-            url,
-            callback = False,
-            auth = False,
-            username = username,
-            password = password
+            url, callback=False, auth=False, username=username, password=password
         )
         self.username = contents.get("username", None)
         self.object_id = contents.get("object_id", None)
@@ -110,4 +96,4 @@ class API(
 
     def ping(self):
         url = self.base_url + "admin/ping"
-        return self.get(url, auth = False)
+        return self.get(url, auth=False)
